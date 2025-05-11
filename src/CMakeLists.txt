@@ -1,0 +1,14 @@
+SET(SOURCES ui_Booting.c
+    ui_Main.c
+    ui_PinControl.c
+    ui_GameSelection.c
+    ui_Settings.c
+    ui_NFC.c
+    ui.c
+    ui_comp_hook.c
+    ui_helpers.c
+    ui_events.c
+    ui_img_b65666855127377b821467c6d15734d1_png.c
+    ui_img_thermo_png.c)
+
+add_library(ui ${SOURCES})
