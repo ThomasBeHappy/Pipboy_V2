@@ -4,18 +4,29 @@
 // Project name: Pipboy_Project
 
 #include <Arduino.h>
-#include "settings.h"
+#include "../settings.h"
 #include "ui.h"
-
-void PlayPause(lv_event_t * e)
-{
-	
-}
 
 void StartFlappy(lv_event_t * e)
 {
 	StartFlappyGameMain();
 }
+
+void StartPong(lv_event_t * e)
+{
+	StartPongGameMain();
+}
+
+void StartSnake(lv_event_t * e)
+{
+	StartSnakeGameMain();
+}
+
+void Start2048(lv_event_t * e)	
+{
+	Start2048GameMain();
+}
+
 
 void WriteNFCData(lv_event_t * e)
 {
@@ -27,6 +38,7 @@ void ChangeVolume(lv_event_t * e)
 	lv_obj_t * slider = lv_event_get_target(e);
 	settings.volume = lv_slider_get_value(slider);
 	saveSettings();
+	ChangeVolumeMain(settings.volume);
 }
 
 void ToggleWifi(lv_event_t * e)
@@ -88,11 +100,15 @@ void MenuSound4(lv_event_t * e)
 
 void PreviousSong(lv_event_t * e)
 {
-	//myDFPlayer.previous();
+	PreviousSongMain();
 }
 
 void SkipSong(lv_event_t * e)
 {
-	//myDFPlayer.next();
+	SkipSongMain();
 }
 	
+void PlayPause(lv_event_t * e)
+{
+	PlayPauseMain();	
+}

@@ -40,9 +40,9 @@ void ui_GameSelection_screen_init(void)
 
     ui_UpLine2 = lv_obj_create(ui_GameSelection);
     lv_obj_set_width(ui_UpLine2, 2);
-    lv_obj_set_height(ui_UpLine2, 75);
+    lv_obj_set_height(ui_UpLine2, 102);
     lv_obj_set_x(ui_UpLine2, -133);
-    lv_obj_set_y(ui_UpLine2, -39);
+    lv_obj_set_y(ui_UpLine2, -25);
     lv_obj_set_align(ui_UpLine2, LV_ALIGN_CENTER);
     lv_obj_clear_flag(ui_UpLine2, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_border_color(ui_UpLine2, lv_color_hex(0x33FF33), LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -111,7 +111,99 @@ void ui_GameSelection_screen_init(void)
     lv_obj_set_style_text_color(ui_Label13, lv_color_hex(0x33FF33), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui_Label13, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
 
+    ui_Button19 = lv_btn_create(ui_GameSelection);
+    lv_obj_set_width(ui_Button19, 84);
+    lv_obj_set_height(ui_Button19, 19);
+    lv_obj_set_x(ui_Button19, -58);
+    lv_obj_set_y(ui_Button19, 0);
+    lv_obj_set_align(ui_Button19, LV_ALIGN_CENTER);
+    lv_obj_add_flag(ui_Button19, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_Button19, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_radius(ui_Button19, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui_Button19, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_Button19, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_color(ui_Button19, lv_color_hex(0x33FF33), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_opa(ui_Button19, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_width(ui_Button19, 1, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_Label18 = lv_label_create(ui_Button19);
+    lv_obj_set_width(ui_Label18, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Label18, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_align(ui_Label18, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Label18, "PONG.sh");
+    lv_obj_set_style_text_color(ui_Label18, lv_color_hex(0x33FF33), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui_Label18, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_Button20 = lv_btn_create(ui_GameSelection);
+    lv_obj_set_width(ui_Button20, 84);
+    lv_obj_set_height(ui_Button20, 19);
+    lv_obj_set_x(ui_Button20, -58);
+    lv_obj_set_y(ui_Button20, -25);
+    lv_obj_set_align(ui_Button20, LV_ALIGN_CENTER);
+    lv_obj_add_flag(ui_Button20, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_Button20, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_radius(ui_Button20, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui_Button20, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_Button20, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_color(ui_Button20, lv_color_hex(0x33FF33), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_opa(ui_Button20, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_width(ui_Button20, 1, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_Label19 = lv_label_create(ui_Button20);
+    lv_obj_set_width(ui_Label19, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Label19, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_align(ui_Label19, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Label19, "SNAKE.sh");
+    lv_obj_set_style_text_color(ui_Label19, lv_color_hex(0x33FF33), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui_Label19, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_Button21 = lv_btn_create(ui_GameSelection);
+    lv_obj_set_width(ui_Button21, 84);
+    lv_obj_set_height(ui_Button21, 19);
+    lv_obj_set_x(ui_Button21, -58);
+    lv_obj_set_y(ui_Button21, 25);
+    lv_obj_set_align(ui_Button21, LV_ALIGN_CENTER);
+    lv_obj_add_flag(ui_Button21, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_Button21, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_radius(ui_Button21, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui_Button21, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_Button21, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_color(ui_Button21, lv_color_hex(0x33FF33), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_opa(ui_Button21, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_width(ui_Button21, 1, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_Label20 = lv_label_create(ui_Button21);
+    lv_obj_set_width(ui_Label20, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Label20, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_align(ui_Label20, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Label20, "2048.sh");
+    lv_obj_set_style_text_color(ui_Label20, lv_color_hex(0x33FF33), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui_Label20, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_HorizontalLine9 = lv_obj_create(ui_GameSelection);
+    lv_obj_set_width(ui_HorizontalLine9, 30);
+    lv_obj_set_height(ui_HorizontalLine9, 2);
+    lv_obj_set_x(ui_HorizontalLine9, -118);
+    lv_obj_set_y(ui_HorizontalLine9, 0);
+    lv_obj_set_align(ui_HorizontalLine9, LV_ALIGN_CENTER);
+    lv_obj_clear_flag(ui_HorizontalLine9, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_border_color(ui_HorizontalLine9, lv_color_hex(0x33FF33), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_opa(ui_HorizontalLine9, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_HorizontalLine10 = lv_obj_create(ui_GameSelection);
+    lv_obj_set_width(ui_HorizontalLine10, 30);
+    lv_obj_set_height(ui_HorizontalLine10, 2);
+    lv_obj_set_x(ui_HorizontalLine10, -118);
+    lv_obj_set_y(ui_HorizontalLine10, 25);
+    lv_obj_set_align(ui_HorizontalLine10, LV_ALIGN_CENTER);
+    lv_obj_clear_flag(ui_HorizontalLine10, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_border_color(ui_HorizontalLine10, lv_color_hex(0x33FF33), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_opa(ui_HorizontalLine10, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+
     lv_obj_add_event_cb(ui_Button8, ui_event_Button8, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Button9, ui_event_Button9, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_Button19, ui_event_Button19, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_Button20, ui_event_Button20, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_Button21, ui_event_Button21, LV_EVENT_ALL, NULL);
 
 }

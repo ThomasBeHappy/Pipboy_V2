@@ -1,5 +1,5 @@
 #include "flappy.h"
-#include "../ui.h"
+#include "../UI/ui.h"
 #include <TFT_eSPI.h>
 #include "DFRobotDFPlayerMini.h"
 
@@ -40,18 +40,12 @@ void ResetFlappy() {
     tft.fillScreen(TFT_BLACK);  // Clear everything on reset
 }
 
-bool AudioIsPlaying() {
-    return digitalRead(32); // High when playing
-}
-
 void playFlapSound() {
-    if(AudioIsPlaying()) {
-        myDFPlayer.play(5);  // Play flap sound
-    }
+    PlayGameSound(5);
 }
 
 void playPointSound() {
-    myDFPlayer.play(6);  // Play point sound
+    PlayGameSound(6);  // Play point sound
 }
 
 void HandleFlappyInput() {

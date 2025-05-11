@@ -1,5 +1,5 @@
 #include "game2048.h"
-#include "../ui.h"
+#include "../UI/ui.h"
 #include <TFT_eSPI.h>
 #include "DFRobotDFPlayerMini.h"
 
@@ -9,9 +9,10 @@ int board[4][4];
 bool hasMoved = false;
 
 // Constants
-const int GRID_SIZE = 60;
-const int GRID_PADDING = 5;
+const int GRID_SIZE = 50;
+const int GRID_PADDING = 4;
 const int BOARD_SIZE = 4;
+const int TOP_MARGIN = 40;
 
 extern TFT_eSPI tft;
 extern DFRobotDFPlayerMini myDFPlayer;
@@ -220,10 +221,10 @@ void Handle2048Input() {
         
         if (hasMoved) {
             addNewTile();
-            myDFPlayer.play(5);  // Play move sound
+            PlayGameSound(7);  // Play move sound
             if (isGameOverCheck()) {
                 isGameOver = true;
-                myDFPlayer.play(6);  // Play game over sound
+                PlayGameSound(8);  // Play game over sound
             }
         }
     }
@@ -250,31 +251,28 @@ void Draw2048() {
         return;
     }
 
+    // Draw score
+    tft.fillRect(70, 5, 245, 30, TFT_BLACK);
+    tft.setTextColor(TFT_WHITE);
+    tft.setTextSize(2);
+    tft.setCursor(80, 10);
+    tft.print("Score: ");
+    tft.print(score);
+
     // Draw board
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 4; j++) {
             int x = j * (GRID_SIZE + GRID_PADDING) + GRID_PADDING;
-            int y = i * (GRID_SIZE + GRID_PADDING) + GRID_PADDING + 30; // Add space for score
+            int y = i * (GRID_SIZE + GRID_PADDING) + GRID_PADDING + TOP_MARGIN;
             
             tft.fillRect(x, y, GRID_SIZE, GRID_SIZE, getTileColor(board[i][j]));
             
             if (board[i][j] != 0) {
                 tft.setTextColor(TFT_BLACK);
                 tft.setTextSize(2);
-                tft.setCursor(x + 20, y + 20);
+                tft.setCursor(x + 15, y + 15);
                 tft.print(board[i][j]);
             }
         }
-    }
-
-    // Draw score if changed
-    if (lastScore != score) {
-        tft.fillRect(0, 0, tft.width(), 30, TFT_BLACK);
-        tft.setTextColor(TFT_WHITE);
-        tft.setTextSize(2);
-        tft.setCursor(10, 5);
-        tft.print("Score: ");
-        tft.print(score);
-        lastScore = score;
     }
 } 

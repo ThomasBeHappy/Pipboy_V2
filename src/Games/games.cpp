@@ -1,5 +1,5 @@
 #include "games.h"
-#include "../ui.h"
+#include "../UI/ui.h"
 #include <TFT_eSPI.h>
 #include "DFRobotDFPlayerMini.h"
 
@@ -37,6 +37,16 @@ void StartGame(GameType game) {
             break;
         default:
             break;
+    }
+}
+
+bool AudioIsPlaying() {
+    return digitalRead(32); // LOW when playing
+}
+
+void PlayGameSound(uint8_t _sound) {
+    if (AudioIsPlaying()) {
+        myDFPlayer.advertise(_sound);
     }
 }
 

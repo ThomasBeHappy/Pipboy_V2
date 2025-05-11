@@ -27,6 +27,11 @@ void updateTimeSettings(uint8_t _hours, uint8_t _minutes);
 
 // Sound functions
 void PlayMenuSound(uint8_t _sound);
+void ChangeVolumeMain(uint8_t _volume);
+// Music functions
+void PreviousSongMain();
+void SkipSongMain();
+void PlayPauseMain();
 
 // Game functions
 void StartFlappyGameMain();

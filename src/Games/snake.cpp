@@ -1,5 +1,5 @@
 #include "snake.h"
-#include "../ui.h"
+#include "../UI/ui.h"
 #include <TFT_eSPI.h>
 #include "DFRobotDFPlayerMini.h"
 
@@ -77,10 +77,16 @@ void HandleSnakeInput() {
     }
 }
 
+unsigned long lastUpdate = 0;
+
 void UpdateSnake() {
     if (isGameOver) return;
 
-    // Move snake body
+    // only update if 1 second has passed
+    if (millis() - lastUpdate >= 1000) {
+        lastUpdate = millis();
+
+        // Move snake body
     for (int i = snakeLength - 1; i > 0; i--) {
         snakeX[i] = snakeX[i-1];
         snakeY[i] = snakeY[i-1];
@@ -110,11 +116,12 @@ void UpdateSnake() {
     }
 
     // Check food collision
-    if (snakeX[0] == foodX && snakeY[0] == foodY) {
-        snakeLength++;
-        score++;
-        GenerateFood();
-        myDFPlayer.play(6);  // Play point sound
+        if (snakeX[0] == foodX && snakeY[0] == foodY) {
+            snakeLength++;
+            score++;
+            GenerateFood();
+            myDFPlayer.play(6);  // Play point sound
+        }
     }
 }
 

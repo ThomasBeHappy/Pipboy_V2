@@ -24,6 +24,7 @@ void DrawGame();
 void HandleGameInput();
 void ResetGame();
 void ReturnToWatch();
+void PlayGameSound(uint8_t _sound);
 
 // Game-specific functions
 void UpdateFlappy();

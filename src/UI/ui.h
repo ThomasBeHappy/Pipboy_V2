@@ -155,6 +155,17 @@ extern lv_obj_t * ui_Label12;
 void ui_event_Button9(lv_event_t * e);
 extern lv_obj_t * ui_Button9;
 extern lv_obj_t * ui_Label13;
+void ui_event_Button19(lv_event_t * e);
+extern lv_obj_t * ui_Button19;
+extern lv_obj_t * ui_Label18;
+void ui_event_Button20(lv_event_t * e);
+extern lv_obj_t * ui_Button20;
+extern lv_obj_t * ui_Label19;
+void ui_event_Button21(lv_event_t * e);
+extern lv_obj_t * ui_Button21;
+extern lv_obj_t * ui_Label20;
+extern lv_obj_t * ui_HorizontalLine9;
+extern lv_obj_t * ui_HorizontalLine10;
 // CUSTOM VARIABLES
 
 // SCREEN: ui_Settings

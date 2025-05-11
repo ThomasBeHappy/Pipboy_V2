@@ -39,7 +39,8 @@ void ui_Settings_screen_init(void)
     lv_obj_set_style_text_opa(ui_Label15, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Slider1 = lv_slider_create(ui_Settings);
-    lv_slider_set_value(ui_Slider1, 50, LV_ANIM_OFF);
+    lv_slider_set_range(ui_Slider1, 0, 30);
+    lv_slider_set_value(ui_Slider1, 10, LV_ANIM_OFF);
     if(lv_slider_get_mode(ui_Slider1) == LV_SLIDER_MODE_RANGE) lv_slider_set_left_value(ui_Slider1, 0, LV_ANIM_OFF);
     lv_obj_set_width(ui_Slider1, 150);
     lv_obj_set_height(ui_Slider1, 10);
