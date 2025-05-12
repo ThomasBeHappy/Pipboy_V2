@@ -6,7 +6,7 @@
 #include <Arduino.h>
 #include "../settings.h"
 #include "ui.h"
-
+#include "../RFID/rfid.h"
 void StartFlappy(lv_event_t * e)
 {
 	StartFlappyGameMain();
@@ -30,7 +30,7 @@ void Start2048(lv_event_t * e)
 
 void WriteNFCData(lv_event_t * e)
 {
-	
+	WriteRFIDMessageMain();
 }
 
 void ChangeVolume(lv_event_t * e)

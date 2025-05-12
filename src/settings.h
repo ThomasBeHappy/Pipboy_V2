@@ -39,6 +39,8 @@ void StartSnakeGameMain();
 void StartPongGameMain();
 void Start2048GameMain();
 
+// RFID functions
+void WriteRFIDMessageMain();
 
 #ifdef __cplusplus
 }

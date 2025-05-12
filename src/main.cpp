@@ -9,6 +9,7 @@
 #include "DFRobotDFPlayerMini.h"
 #include "Games/games.h"
 #include "music.h"
+#include "RFID/rfid.h"
 #define FPSerial Serial1
 
 // Display configuration
@@ -85,6 +86,19 @@ void loadSettings() {
 #ifdef __cplusplus
 }
 #endif
+
+#pragma region RFID
+void WriteRFIDMessageMain() {
+    // Get data from text field
+    const char *data = lv_textarea_get_text(ui_TextArea1);
+    writeRFIDMessage(data);
+}
+
+void ReadRFIDMessageMain() {
+    const char *data = readRFID();
+    lv_textarea_set_text(ui_TextArea1, data);
+}
+#pragma endregion
 
 #pragma region Time Rollers
 void updateTimeRollers(uint8_t _hours, uint8_t _minutes) {
@@ -404,6 +418,14 @@ void setup() {
     Serial.println("Initializing time system...");
     updateTimeRollers(settings.hours, settings.minutes);
     lv_bar_set_value(ui_Bar1, 80, LV_ANIM_OFF); // Time system initialized
+    lv_timer_handler();
+    lv_tick_inc(100);
+    delay(100);
+
+    // Initialize RFID
+    Serial.println("Initializing RFID...");
+    setupRFID();
+    lv_bar_set_value(ui_Bar1, 90, LV_ANIM_OFF); // RFID initialized
     lv_timer_handler();
     lv_tick_inc(100);
     delay(100);
